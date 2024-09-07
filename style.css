@@ -1,0 +1,175 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+:root {
+  --strong-cyan: hsl(172, 67%, 45%);
+  --very-dark-cyan: hsl(183, 100%, 15%);
+  --dark-grayish-cyan: hsl(186, 14%, 43%);
+  --grayish-cyan: hsl(184, 14%, 56%);
+  --light-grayish-cyan: hsl(185, 41%, 84%);
+  --very-light-grayish-cyan: hsl(189, 41%, 97%);
+  --white: hsl(0, 0%, 100%);
+}
+body {
+  font-family: "Space Mono";
+  min-height: 100vh;
+  min-width: 80vw;
+  background: var(--light-grayish-cyan);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3.5rem;
+}
+.container {
+  display: flex;
+  background: var(--white);
+  border-radius: 10px;
+  padding: 1.5em;
+  gap: 3em;
+}
+button,
+input {
+  font-family: "Space Mono";
+  border: none;
+  outline: none;
+  font-weight: 700;
+}
+.calculator {
+  background: var(--very-dark-cyan);
+  border-radius: inherit;
+  padding: 1.5em;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+p {
+  font-weight: 700;
+}
+.inputs p {
+  color: var(--dark-grayish-cyan);
+  font-size: 0.9em;
+}
+.tip-amount {
+  display: flex;
+  justify-content: space-between;
+}
+.total-amount {
+  display: flex;
+  justify-content: space-between;
+}
+.calculator p {
+  font-size: 0.9em;
+  color: var(--very-light-grayish-cyan);
+}
+.calculator p span {
+  font-size: 0.75em;
+  color: var(--grayish-cyan);
+}
+.tip-amount > span,
+.total-amount > span {
+  font-size: 2.1em;
+  align-self: center;
+  color: var(--strong-cyan);
+  font-weight: 700;
+}
+.calculator button {
+  width: 100%;
+  color: var(--very-dark-cyan);
+  text-transform: uppercase;
+  padding: 0.5em;
+  border-radius: 5px;
+  background: var(--dark-grayish-cyan);
+  cursor: pointer;
+}
+.calculator button:hover {
+  background: var(--light-grayish-cyan);
+}
+input:focus {
+  border: 2px solid var(--strong-cyan);
+  caret-color: var(--strong-cyan);
+}
+#bill,
+#people {
+  text-align: right;
+  width: 100%;
+  color: var(--very-dark-cyan);
+  background: var(--very-light-grayish-cyan);
+  border-radius: 5px;
+  padding: 0.5em;
+  font-size: 1.1em;
+  cursor: pointer;
+}
+.tip-inputs {
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75em;
+}
+.tip-inputs button {
+  width: 100%;
+  background: var(--very-dark-cyan);
+  border-radius: 5px;
+  color: var(--very-light-grayish-cyan);
+  padding: 0.5em;
+  font-size: 1.2em;
+  cursor: pointer;
+}
+.tip-inputs button:hover {
+  background: var(--light-grayish-cyan);
+  color: var(--very-dark-cyan);
+}
+.tip-inputs input {
+  text-align: right;
+  color: var(--very-dark-cyan);
+  font-size: 1.2em;
+  cursor: pointer;
+  border-radius: 5px;
+}
+.tip-inputs input::placeholder {
+  text-align: center;
+}
+#bill::placeholder,
+#people::placeholder {
+  color: var(--grayish-cyan);
+}
+label {
+  position: relative;
+}
+label img {
+  position: absolute;
+  left: 1em;
+  top: 0.15em;
+}
+#error {
+  position: absolute;
+  color: red;
+  right: 0;
+  top: -3.25em;
+  font-size: 0.9em;
+  visibility: hidden;
+}
+.invalid {
+  border: 2px solid red;
+}
+button.selected {
+  background: var(--strong-cyan);
+  color: var(--very-dark-cyan);
+}
+@media (max-width: 600px) {
+  body {
+    padding: 1em;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  .container {
+    flex-direction: column;
+    width: 100%;
+  }
+  .calculator {
+    width: 90%;
+  }
+  .tip-inputs {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+  }
+}
